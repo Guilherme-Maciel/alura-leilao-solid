@@ -1,3 +1,5 @@
+using Alura.LeilaoOnline.WebApp.Dados;
+using Alura.LeilaoOnline.WebApp.Dados.EfCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +15,8 @@ namespace Alura.LeilaoOnline.WebApp
                 {
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
+            //AddTransient - Adicione por requisição
+            services.AddTransient<ILeilaoDao, LeilaoDaoComEfCore>();
         }
 
         public void Configure(IApplicationBuilder app)
