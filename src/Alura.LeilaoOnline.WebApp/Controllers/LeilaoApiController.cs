@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Alura.LeilaoOnline.WebApp.Models;
 using Alura.LeilaoOnline.WebApp.Dados;
+using Alura.LeilaoOnline.WebApp.Dados.EfCore;
+
 
 namespace Alura.LeilaoOnline.WebApp.Controllers
 {
@@ -10,7 +12,7 @@ namespace Alura.LeilaoOnline.WebApp.Controllers
     public class LeilaoApiController : ControllerBase
     {
         AppDbContext _context;
-        LeilaoDaoComEfCore _dao;
+        ILeilaoDao _dao;
 
         public LeilaoApiController()
         {

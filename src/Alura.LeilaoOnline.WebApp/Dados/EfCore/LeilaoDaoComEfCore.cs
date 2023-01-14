@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace Alura.LeilaoOnline.WebApp.Dados
+//WebApp.Dados -> tipos abstratos.
+//WebApp.Dados.SqlClient -> provider Sql Server.
+namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
 {
-    public class LeilaoDaoComEfCore
+    public class LeilaoDaoComEfCore : ILeilaoDao
     {
         AppDbContext _context;
 
