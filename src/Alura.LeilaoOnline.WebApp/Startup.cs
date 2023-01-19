@@ -18,10 +18,11 @@ namespace Alura.LeilaoOnline.WebApp
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
             //AddTransient - Adicione por requisição
-            services.AddTransient<ILeilaoDao, LeilaoDaoComEfCore>();
             services.AddTransient<ICategoriaDao, CategoriaDaoComEfCore>();
             services.AddTransient<ILeilaoDao, LeilaoDaoComEfCore>();
             services.AddTransient<IProdutoService, DefaultProdutoService>();
+            services.AddTransient<IAdminService, ArquivamentoAdminService>();
+
             services.AddDbContext<AppDbContext>();
         }
 
